@@ -1,15 +1,10 @@
 package EX3
 fun main() {
-    println("Digite um número: ")
-    val numero = readln()?.toIntOrNull()
+    var contador = 0
 
-    if(numero != null) {
-        if (numero % 5 == 0) {
-            println("O número $numero é múltiplo de 5!")
-        }else {
-            println("O número $numero não é múltiplo de 5!")
-        }
-    }else {
-        println("É permitido somente números inteiros.")
+    while (contador < 20) {
+        println("Eu gosto de estudar Algoritmos!")
+        println("===============================")
+        contador++
     }
 }

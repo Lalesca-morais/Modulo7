@@ -1,15 +1,24 @@
 package EX5
 fun main() {
-    println("Digite um número: ")
-    val numero = readLine()?.toDoubleOrNull()
+    println("Quantos itens você deseja adicionar na lista de compras?")
+    val quantidade = readLine()?.toIntOrNull()
 
-    if(numero != null) {
-        if (numero < 0){
-            println("O número é negativo")
-        }else {
-            println("O número é positivo")
+    if (quantidade != null && quantidade > 0) {
+        val listaCompras = Array(quantidade) { "" }
+
+        for (i in 0 until quantidade) {
+            println("Digite o nome do item ${i + 1}:")
+            val produto = readLine()
+
+            if (!produto.isNullOrBlank()) {
+                listaCompras[i] = produto
+            } else {
+                println("Nome inválido. O item não será adicionado à lista.")
+            }
         }
-    }else{
-        println("Favor digitar um número válido!")
+        println("Lista de compras:")
+        listaCompras.forEach { println(it) }
+    } else {
+        println("É permitido apenas números inteiros!")
     }
 }

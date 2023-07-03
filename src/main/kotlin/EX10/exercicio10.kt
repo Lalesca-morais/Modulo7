@@ -1,12 +1,11 @@
 package EX10
 fun main() {
-    println("Digite um número inteiro:")
-    val numero = readLine()?.toIntOrNull() // converte um String em int, retorna null se nao conseguir converter.
+    var contador = 1
+    var soma = 0
 
-    if (numero != null) {
-        val sucessor = numero + 1
-        println("O sucessor de $numero é $sucessor.")
-    } else {
-        println("É permitido somente números inteiros.")
-    }
+    do {
+        soma += contador
+        contador++
+    } while (contador <= 15)
+    println("Resultado: $soma")
 }

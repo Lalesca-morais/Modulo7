@@ -1,13 +1,17 @@
 package EX6
 fun main() {
-    println("Digite um valor em dólar: ")
-    val valorDolar = readLine()?.toDoubleOrNull()
+    println("Digite o nome da banda: ")
+    val banda = readLine()
 
-    if(valorDolar!= null && valorDolar > 0 ) {
-        val cotacao = 4.86
-        val convercao = valorDolar * cotacao
-        println("A conversão em reais é: R$ $convercao ")
-    }else {
-        println("Favor digitar um número válido!")
+    val listaMusicas = Array<String>(3) { "" }
+
+    for (i in 0 until listaMusicas.size) {
+        println("Digite o nome da música ${i + 1}: ")
+        listaMusicas[i] = readLine().orEmpty()
+    }
+    println("Nome da Banda: $banda")
+    println("Músicas:")
+    for (musica in listaMusicas) {
+        println(musica)
     }
 }

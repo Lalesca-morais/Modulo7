@@ -1,16 +1,23 @@
 package EX7
 
 fun main(){
-    println("Digite a base do retangulo: ")
-    val base = readLine()?.toDoubleOrNull()
+    var soma = 0.0
+    println("Digite quantos alunos tem na sala: ")
+    val numeroDeAlunos = readLine()?.toIntOrNull() ?: 0
 
-    println("Digite a altura do retangulo: ")
-    val altura = readLine()?.toDoubleOrNull()
+    val notas = DoubleArray(numeroDeAlunos)
 
-    if (base != null && altura != null && base > 0 && altura > 0 ) {
-        val valorRetangulo = base * altura
-        println("A área do retângulo é: $valorRetangulo")
-    }else {
-        println("Favor digitar apenas valores positivos.")
+    var contador = 0
+
+    while (contador < numeroDeAlunos!!) {
+        println("Digite a nota do aluno ${contador + 1}: ")
+        notas[contador] = readLine()?.toDoubleOrNull() ?: 0.0
+        contador++
     }
+    for(nota in notas) {
+        soma += nota
+    }
+    val media = if (numeroDeAlunos > 0) soma / numeroDeAlunos else 0.0
+    val mediaFormatada = "%.3f".format(media)
+    println("Média dos alunos: $mediaFormatada")
 }

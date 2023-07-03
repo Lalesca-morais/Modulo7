@@ -1,17 +1,22 @@
 package EX8
 fun main(){
-    println("Digite o valor de X: ")
-    val x = readln()?.toIntOrNull()
+    println("Digite um valor: ")
+    val valor = readLine()?.toIntOrNull() ?:0
 
-    println("Digite o valor de Y: ")
-    val y = readln()?.toIntOrNull()
-
-    if (x != null && y != null){
-        val troca = x
-        val x = y
-        val y = troca
-        println("Novos valores de X = $x, e Y = $y")
-    }else{
-        println("Favor digitar um número válido!")
+    val fibonacci = calculoFibonacci(valor)
+    println("Número Fibonacci: ($valor) = $fibonacci")
+}
+fun calculoFibonacci(n: Int): Int {
+    if(n <= 1) {
+        return n
     }
+    var anterior = 0
+    var atual = 1
+
+    for(i in 2..n) {
+        val proximo = anterior + atual
+        anterior = atual
+        atual = proximo
+    }
+    return atual
 }
