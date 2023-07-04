@@ -1,10 +1,10 @@
 package EX4
 fun main() {
     println("Digite a base do retângulo: ")
-    val base = readLine()?.toDoubleOrNull() ?:0.0
+    val base = readln().toDouble()
 
     println("Digite a altura do retângulo: ")
-    val altura = readLine()?.toDoubleOrNull() ?:0.0
+    val altura = readln().toDouble()
 
     val area = calculoRetangulo(base, altura)
     println("A área do retângulo é: $area")

@@ -6,9 +6,6 @@ fun main() {
     println("Digite o segundo número:")
     val num2 = readln().toDouble()
 
-    operacoes(num1, num2)
-}
-fun operacoes(num1: Double, num2: Double) {
     val soma = num1 + num2
     val somaFormatada = String.format("%.2f", soma)
     println("Soma: $somaFormatada")
@@ -25,3 +22,6 @@ fun operacoes(num1: Double, num2: Double) {
     val divisaoFormatada = String.format("%.2f", divisao)
     println("Divisão: $divisaoFormatada")
 }
+
+
+

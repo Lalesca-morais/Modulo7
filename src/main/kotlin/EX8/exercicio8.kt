@@ -27,7 +27,7 @@ fun main(){
 fun calculoMedia(alunos: Array<String>, quantidadeDeAlunos: Int, nota1: Array<Double>, nota2: Array<Double>, nota3: Array<Double>) {
 
     for (i in 0 until quantidadeDeAlunos) {
-        val media = nota1[i] + nota2[i] + nota3[i] / 3
+        val media = (nota1[i] + nota2[i] + nota3[i]) / 3
         val mediaFormatada = String.format("%.2f", media)
 
         println("A média do aluno ${alunos[i]} foi de: $mediaFormatada")

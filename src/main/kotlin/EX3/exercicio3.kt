@@ -9,9 +9,6 @@ fun main() {
 
     val imc = peso / (altura * altura)
 
-    calculoImc(imc)
-}
-fun calculoImc(imc: Double) {
     when {
         imc < 18.5 -> println("Classificação: Magreza")
         imc in 18.5..24.9 -> println("Classificação: Normal")
@@ -21,6 +18,7 @@ fun calculoImc(imc: Double) {
         else -> println("Opção inválida!")
     }
 }
+
 
 
 

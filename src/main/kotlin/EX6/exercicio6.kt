@@ -1,7 +1,7 @@
 package EX6
 fun main() {
     println("Digite a quantidade de números: ")
-    val quantidade = readLine()?.toIntOrNull() ?:0
+    val quantidade = readln().toInt()
 
     if(quantidade <= 0) {
         println("Digite apenas números válidos!")
@@ -10,7 +10,7 @@ fun main() {
 
         for(i in numeros.indices){
             println("Digite o número ${i + 1}: ")
-            numeros[i] = readLine()?.toIntOrNull() ?:0
+            numeros[i] = readln().toInt()
         }
         val menor = menorNumero(numeros)
         println("O menor número é: $menor")

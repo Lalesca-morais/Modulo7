@@ -1,7 +1,7 @@
 package EX1
 fun main() {
     println("Digite um número: ")
-    val numero = readln()?.toIntOrNull()
+    val numero = readln().toInt()
 
     if (numero != null && numero >= 0) {
         val resultado = somaNumeros(numero)
