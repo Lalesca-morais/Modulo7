@@ -10,12 +10,12 @@ fun calculoFibonacci(n: Int): Int {
     if(n <= 1) {
         return n
     }
-    var anterior = 0
+    var antecessor = 0
     var atual = 1
 
     for(i in 2..n) {
-        val proximo = anterior + atual
-        anterior = atual
+        val proximo = antecessor + atual
+        antecessor = atual
         atual = proximo
     }
     return atual

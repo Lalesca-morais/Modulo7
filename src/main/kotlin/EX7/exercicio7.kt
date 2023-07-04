@@ -18,6 +18,6 @@ fun main(){
         soma += nota
     }
     val media = if (numeroDeAlunos > 0) soma / numeroDeAlunos else 0.0
-    val mediaFormatada = "%.3f".format(media)
+    val mediaFormatada = "%.2f".format(media)
     println("Média dos alunos: $mediaFormatada")
 }

@@ -6,6 +6,7 @@ fun main() {
     do {
         soma += contador
         contador++
-    } while (contador <= 15)
+    } while (contador < 15)
+    println("Posição do contador: $contador")
     println("Resultado: $soma")
 }
