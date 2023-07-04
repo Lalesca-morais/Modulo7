@@ -1,17 +1,21 @@
 package EX6
 fun main() {
-    println("Digite o nome da banda: ")
-    val banda = readLine()
+    println("Digite a quantidade de números: ")
+    val quantidade = readLine()?.toIntOrNull() ?:0
 
-    val listaMusicas = Array<String>(3) { "" }
+    if(quantidade <= 0) {
+        println("Digite apenas números válidos!")
+    }else{
+        val numeros : IntArray = IntArray(quantidade)
 
-    for (i in 0 until listaMusicas.size) {
-        println("Digite o nome da música ${i + 1}: ")
-        listaMusicas[i] = readLine().orEmpty()
+        for(i in numeros.indices){
+            println("Digite o número ${i + 1}: ")
+            numeros[i] = readLine()?.toIntOrNull() ?:0
+        }
+        val menor = menorNumero(numeros)
+        println("O menor número é: $menor")
     }
-    println("Nome da Banda: $banda")
-    println("Músicas:")
-    for (musica in listaMusicas) {
-        println(musica)
-    }
+}
+fun menorNumero(numeros: IntArray): Int? {
+    return numeros.min()
 }

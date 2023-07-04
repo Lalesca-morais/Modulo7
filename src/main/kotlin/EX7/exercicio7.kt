@@ -1,23 +1,27 @@
 package EX7
 
 fun main(){
-    var soma = 0.0
-    println("Digite quantos alunos tem na sala: ")
-    val numeroDeAlunos = readLine()?.toIntOrNull() ?: 0
+    println("Insira seu nome: ")
+    val nome = readln()
 
-    val notas = DoubleArray(numeroDeAlunos)
+    println("Insira seu salário fixo: ")
+    val salarioFixo = readln().toDouble()
 
-    var contador = 0
+    println("Insira seu total de vendas efetuadas no mês (em dinheiro): ")
+    val vendasNoMes = readln().toDouble()
 
-    while (contador < numeroDeAlunos!!) {
-        println("Digite a nota do aluno ${contador + 1}: ")
-        notas[contador] = readLine()?.toDoubleOrNull() ?: 0.0
-        contador++
-    }
-    for(nota in notas) {
-        soma += nota
-    }
-    val media = if (numeroDeAlunos > 0) soma / numeroDeAlunos else 0.0
-    val mediaFormatada = "%.2f".format(media)
-    println("Média dos alunos: $mediaFormatada")
+    calculoSalario(nome, salarioFixo, vendasNoMes)
 }
+fun calculoSalario(nome: String?, salarioFixo: Double, vendasNoMes: Double) {
+    val comissao = vendasNoMes * 0.15
+
+    val salarioTotal = salarioFixo + comissao
+    val salarioTotalFormatado = String.format("%.3f", salarioTotal)
+
+    val salarioFixo = String.format("%.3f", salarioFixo)
+
+    println("Nome do vendedor: $nome")
+    println("Salário fixo: R$ $salarioFixo")
+    println("Salário no final do mês: R$ $salarioTotalFormatado")
+}
+

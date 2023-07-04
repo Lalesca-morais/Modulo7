@@ -1,24 +1,20 @@
 package EX1
 fun main() {
-    val vetor = IntArray(5)
+    println("Digite um número: ")
+    val numero = readln()?.toIntOrNull()
 
-    println("Digite 5 números inteiros:")
+    if (numero != null && numero >= 0) {
+        val resultado = somaNumeros(numero)
+        println("O resultado da soma é: $resultado")
 
-    for (i in 0 until 5) {
-        var numero: Int? = null
-        while (numero == null) {
-            val input = readLine()
-            numero = input?.toIntOrNull()
-            if (numero == null) {
-                println("Valor inválido. Digite um número inteiro.")
-            }
-        }
-        vetor[i] = numero
-    }
-    var soma = 0
-    for (numero in vetor) {
-        soma += numero
-    }
-    println("A soma dos valores é: $soma")
+    }else println("É permitido apenas números válidos!")
 }
+fun somaNumeros(numero: Int): Int {
+    var soma = 0
+    for (i in 1..numero) {
+        soma += i
+    }
+    return soma
+}
+
 

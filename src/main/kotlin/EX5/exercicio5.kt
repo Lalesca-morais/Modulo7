@@ -1,24 +1,27 @@
 package EX5
 fun main() {
-    println("Quantos itens você deseja adicionar na lista de compras?")
-    val quantidade = readLine()?.toIntOrNull()
+    println("Digite o primeiro número:")
+    val num1 = readln().toDouble()
 
-    if (quantidade != null && quantidade > 0) {
-        val listaCompras = Array(quantidade) { "" }
+    println("Digite o segundo número:")
+    val num2 = readln().toDouble()
 
-        for (i in 0 until quantidade) {
-            println("Digite o nome do item ${i + 1}:")
-            val produto = readLine()
+    operacoes(num1, num2)
+}
+fun operacoes(num1: Double, num2: Double) {
+    val soma = num1 + num2
+    val somaFormatada = String.format("%.2f", soma)
+    println("Soma: $somaFormatada")
 
-            if (!produto.isNullOrBlank()) {
-                listaCompras[i] = produto
-            } else {
-                println("Nome inválido. O item não será adicionado à lista.")
-            }
-        }
-        println("Lista de compras:")
-        listaCompras.forEach { println(it) }
-    } else {
-        println("É permitido apenas números inteiros!")
-    }
+    val subtracao = num1 - num2
+    val subtracaoFormatada = String.format("%.2f", subtracao)
+    println("Subtração: $subtracaoFormatada")
+
+    val multiplicacao = num1 * num2
+    val multiplicacaoFormatada = String.format("%.2f", multiplicacao)
+    println("Multiplicação: $multiplicacaoFormatada")
+
+    val divisao = num1 / num2
+    val divisaoFormatada = String.format("%.2f", divisao)
+    println("Divisão: $divisaoFormatada")
 }
