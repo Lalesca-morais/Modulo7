@@ -1,22 +1,22 @@
 package EX3
 fun main() {
-    println("\nCALCULO IMC")
-    println("Insira seu peso: ")
-    val peso = readLine()?.toDoubleOrNull() ?: 0.0
+    println("Digite quantos produtos o cliente comprou: ")
+    val produtos = readln().toIntOrNull()
 
-    println("Insira sua altura: ")
-    val altura = readLine()?.toDoubleOrNull() ?: 0.0
+    if (produtos != null && produtos >= 0) {
+        var total = 0.0
 
-    val imc = peso / (altura * altura)
+        for(i in 1..produtos) {
+            println("Digite o valor do produto $i: ")
+            val preco = readln().toDoubleOrNull()
 
-    when {
-        imc < 18.5 -> println("Classificação: Magreza")
-        imc in 18.5..24.9 -> println("Classificação: Normal")
-        imc in 25.0..29.9 -> println("Classificação: Sobrepeso")
-        imc in 30.0..39.9 -> println("Classificação: Obesidade")
-        imc > 40.0 -> println("Classificação: Obesidade grave")
-        else -> println("Opção inválida!")
-    }
+            if(preco != null && preco >= 0) {
+                total += preco
+            }else println("Digite apenas números válidos")
+        }
+        println("Valor total a pagar: R$%.2f".format(total))
+
+    }else println("Digite apenas números válidos")
 }
 
 

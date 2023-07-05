@@ -1,25 +1,25 @@
 package EX7
 
 fun main(){
-    println("Insira seu nome: ")
-    val nome = readln()
+    println("Informe a quantidade de turmas:")
+    val turmas = readln().toInt()
 
-    println("Insira seu salário fixo: ")
-    val salarioFixo = readln().toDouble()
+    for (turma in 1..turmas) {
+        println("Turma: $turma")
+        println("Informe a quantidade de alunos:")
+        val alunos = readln().toInt()
 
-    println("Insira seu total de vendas efetuadas no mês (em dinheiro): ")
-    val vendasNoMes = readln().toDouble()
+        var totalNotas = 0.0
 
-    val comissao = vendasNoMes * 0.15
+        for (aluno in 1..alunos) {
+            println("Informe a média do aluno $aluno:")
+            val media = readln().toDouble()
+            totalNotas += media
 
-    val salarioTotal = salarioFixo + comissao
-    val salarioTotalFormatado = String.format("%.3f", salarioTotal)
-
-    val salarioFixo1 = String.format("%.3f", salarioFixo)
-
-    println("Nome do vendedor: $nome")
-    println("Salário fixo: R$ $salarioFixo1")
-    println("Salário no final do mês: R$ $salarioTotalFormatado")
+        }
+        val mediaTurma = totalNotas / alunos
+        println("Média da turma $turma: $mediaTurma")
+    }
 }
 
 

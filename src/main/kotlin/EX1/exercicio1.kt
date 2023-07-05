@@ -1,20 +1,24 @@
 package EX1
 fun main() {
-    println("Digite um número: ")
-    val numero = readln().toInt()
+    println("Digite o valor de X:")
+    val x = readln().toIntOrNull()
 
-    if (numero != null && numero >= 0) {
-        val resultado = somaNumeros(numero)
-        println("O resultado da soma é: $resultado")
+    println("Digite o valor de Y:")
+    val y = readln().toIntOrNull()
 
-    }else println("É permitido apenas números válidos!")
+    somaValores(x!!,y!!)
 }
-fun somaNumeros(numero: Int): Int {
-    var soma = 0
-    for (i in 1..numero) {
-        soma += i
-    }
-    return soma
+fun somaValores(x: Int, y:Int) {
+        var sum = 0
+
+        for(num in x..y) {
+            if(num % 13 != 0){
+                sum += num
+            }
+        }
+        println("Resultado: $sum")
 }
+
+
 
 
